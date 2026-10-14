@@ -10,105 +10,126 @@
       theme: {
         extend: {
           colors: {
-            ink: '#0a0a0b',
-            surface: '#111113',
-            border: '#1c1c1f',
-            muted: '#71717a',
-            accent: '#22d3ee',
+            ink: '#0f172a',
+            soft: '#f8fafc',
+            border: '#e2e8f0',
+            muted: '#64748b',
+            indigo: '#4f46e5',
+            teal: '#0d9488',
+            coral: '#f43f5e',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 4px 24px -4px rgba(15, 23, 42, 0.08)',
           }
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: Inter, system-ui, sans-serif; }
+    .font-display { font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif; }
   </style>
 </head>
-<body class="bg-ink text-zinc-100 antialiased">
+<body class="bg-soft text-ink antialiased">
 
   <!-- Nav -->
-  <header class="border-b border-border">
-    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 text-sm font-semibold tracking-tight">
-        <span class="text-accent">◈</span> File Inspector
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo to-teal flex items-center justify-center text-white text-lg shadow-soft">🛡️</span>
+        <span class="font-display font-bold text-lg tracking-tight">File Inspector</span>
       </a>
-      <nav class="flex items-center gap-6 text-sm text-muted">
-        <a href="privacy.html" class="hover:text-zinc-100 transition">Privacy</a>
-        <a href="terms.html" class="text-zinc-100">Terms</a>
-        <a href="index.html#download" class="text-accent hover:text-cyan-300 transition font-medium">Install</a>
+      <nav class="flex items-center gap-1 sm:gap-6 text-sm font-medium">
+        <a href="privacy.html" class="px-3 py-1.5 rounded-lg text-muted hover:text-ink hover:bg-slate-100 transition">Privacy</a>
+        <a href="terms.html" class="px-3 py-1.5 rounded-lg bg-indigo/10 text-indigo">Terms</a>
+        <a href="index.html#download" class="ml-2 px-4 py-2 rounded-xl bg-indigo text-white text-sm font-semibold shadow-soft hover:bg-indigo/90 transition">
+          Install free
+        </a>
       </nav>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-6 py-16">
-    <p class="text-xs text-muted mb-2">Effective: October 2026</p>
-    <h1 class="text-3xl font-semibold tracking-tight text-white mb-10">Terms of Service</h1>
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo/10 text-indigo text-xs font-semibold mb-4">
+      📜 Legal
+    </div>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-2">Terms of Service</h1>
+    <p class="text-sm text-muted mb-12">Effective: October 2026</p>
 
-    <div class="space-y-10 text-sm leading-relaxed text-zinc-300">
+    <div class="space-y-8">
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">1. License</h2>
-        <p class="text-muted">
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-indigo">1.</span> License
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
           File Inspector is provided free of charge for personal use. You receive a non-exclusive, non-transferable license to install and use the extension in Chrome (or Chromium-based browsers that support Manifest V3) solely for inspecting and managing downloads on your own devices.
         </p>
       </section>
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">2. Acceptable use</h2>
-        <p class="text-muted">
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-teal">2.</span> Acceptable use
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
           You may use the extension only for lawful purposes. You may not reverse-engineer, redistribute, or modify the extension for commercial resale without prior written permission, nor use it to facilitate illegal activity.
         </p>
       </section>
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">3. “As is” software</h2>
-        <p class="text-muted">
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-coral">3.</span> “As is” software
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
           The extension is provided “AS IS” and without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. The developers do not guarantee that every malicious file will be detected or that every legitimate file will be allowed.
         </p>
       </section>
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">4. Limitation of liability</h2>
-        <p class="text-muted">
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-indigo">4.</span> Limitation of liability
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
           To the fullest extent permitted by law, the developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data, malware infection, system damage, or other harm arising from use of (or inability to use) the extension, including cases where a download was blocked, allowed, or bypassed by the user.
         </p>
       </section>
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">5. User responsibility</h2>
-        <p class="text-muted">
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-teal">5.</span> Your responsibility
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
           You remain solely responsible for deciding whether to proceed with any download. The extension is a warning and inspection tool; it does not replace antivirus software, safe browsing habits, or your own judgment.
         </p>
       </section>
 
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">6. Changes</h2>
-        <p class="text-muted">
-          These terms may be updated from time to time. The effective date above will be revised when changes are made. Continued use after an update constitutes acceptance of the new terms.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-base font-semibold text-white mb-3">7. Contact</h2>
-        <p class="text-muted">
-          Questions about these terms can be directed through the support channel listed on the Chrome Web Store listing for File Inspector.
+      <section class="p-6 rounded-2xl bg-white border border-border shadow-soft">
+        <h2 class="font-display font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-coral">6.</span> Changes & contact
+        </h2>
+        <p class="text-sm text-muted leading-relaxed">
+          These terms may be updated from time to time. The effective date above will be revised when changes are made. Continued use after an update constitutes acceptance of the new terms. Questions can be directed through the support channel on the Chrome Web Store listing for File Inspector.
         </p>
       </section>
 
     </div>
   </main>
 
-  <footer class="border-t border-border">
-    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
-      <span>© 2026 File Inspector</span>
-      <div class="flex gap-6">
-        <a href="index.html" class="hover:text-zinc-100 transition">Home</a>
-        <a href="privacy.html" class="hover:text-zinc-100 transition">Privacy</a>
+  <footer class="bg-white border-t border-border mt-8">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo to-teal flex items-center justify-center text-white text-sm">🛡️</span>
+        <span class="font-display font-semibold">File Inspector</span>
+      </div>
+      <p class="text-sm text-muted">© 2026 File Inspector. Built for safer downloads.</p>
+      <div class="flex gap-6 text-sm font-medium">
+        <a href="index.html" class="text-muted hover:text-indigo transition">Home</a>
+        <a href="privacy.html" class="text-muted hover:text-indigo transition">Privacy</a>
       </div>
     </div>
   </footer>
