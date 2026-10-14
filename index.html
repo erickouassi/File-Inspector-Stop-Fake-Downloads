@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Inspector — Stop Fake Downloads</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0b',
+            surface: '#111113',
+            border: '#1c1c1f',
+            muted: '#71717a',
+            accent: '#22d3ee',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-ink text-zinc-100 antialiased">
+
+  <!-- Nav -->
+  <header class="border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-sm font-semibold tracking-tight">
+        <span class="text-accent">◈</span> File Inspector
+      </a>
+      <nav class="flex items-center gap-6 text-sm text-muted">
+        <a href="privacy.html" class="hover:text-zinc-100 transition">Privacy</a>
+        <a href="terms.html" class="hover:text-zinc-100 transition">Terms</a>
+        <a href="#download" class="text-accent hover:text-cyan-300 transition font-medium">Install</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-3xl mx-auto px-6 pt-24 pb-20">
+    <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Chrome extension</p>
+    <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-white leading-[1.15] mb-5">
+      Stop fake downloads<br>before they hit disk.
+    </h1>
+    <p class="text-lg text-muted max-w-xl leading-relaxed mb-10">
+      Inspects file signatures, blocks disguised executables, and lets you verify any download locally. No telemetry. No cloud.
+    </p>
+    <div class="flex flex-wrap items-center gap-4">
+      <a href="#download" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-ink text-sm font-semibold hover:bg-zinc-200 transition">
+        Add to Chrome — Free
+      </a>
+      <a href="#how" class="text-sm text-muted hover:text-zinc-100 transition">
+        How it works →
+      </a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-16 grid sm:grid-cols-3 gap-10">
+      <div>
+        <h3 class="text-sm font-semibold text-white mb-2">Binary header scan</h3>
+        <p class="text-sm text-muted leading-relaxed">Checks MZ magic numbers (0x4D 0x5A) so renamed .exe files can’t hide behind fake extensions.</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-white mb-2">Instant intercept</h3>
+        <p class="text-sm text-muted leading-relaxed">Pauses risky downloads via Manifest V3 before anything is written to disk.</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-white mb-2">Local only</h3>
+        <p class="text-sm text-muted leading-relaxed">All analysis runs on your machine. Nothing is sent off-device.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-16">
+      <h2 class="text-sm font-semibold text-white mb-8">How it works</h2>
+      <ol class="space-y-6">
+        <li class="flex gap-4">
+          <span class="text-xs font-mono text-accent mt-0.5">01</span>
+          <div>
+            <p class="text-sm font-medium text-white">You click a download</p>
+            <p class="text-sm text-muted mt-1">The extension reads the target URL and file type in the background.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-xs font-mono text-accent mt-0.5">02</span>
+          <div>
+            <p class="text-sm font-medium text-white">Risky files are paused</p>
+            <p class="text-sm text-muted mt-1">Executables and high-risk formats are held so you can inspect the link first.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-xs font-mono text-accent mt-0.5">03</span>
+          <div>
+            <p class="text-sm font-medium text-white">You decide</p>
+            <p class="text-sm text-muted mt-1">Copy the URL for VirusTotal or similar, cancel, or proceed if you trust the source.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="download" class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+      <h2 class="text-2xl font-semibold text-white mb-3">Install in under a minute</h2>
+      <p class="text-sm text-muted mb-8 max-w-md mx-auto">Free, open, and private. No account required.</p>
+      <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-ink text-sm font-semibold hover:bg-zinc-200 transition">
+        Add to Chrome
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+      <span>© 2026 File Inspector</span>
+      <div class="flex gap-6">
+        <a href="privacy.html" class="hover:text-zinc-100 transition">Privacy</a>
+        <a href="terms.html" class="hover:text-zinc-100 transition">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
